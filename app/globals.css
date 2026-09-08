@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #05060d;
+  color: #e7ecf9;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(45, 226, 255, 0.25);
+  color: #ffffff;
+}
+
+/* thin, quiet scrollbar that fits the void aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(126, 140, 181, 0.25);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(126, 140, 181, 0.4);
+}
+
+@layer components {
+  /* base glass surface used by cards, badges, nav, buttons */
+  .glass {
+    @apply bg-white/[0.04] backdrop-blur-xl border border-white/[0.08];
+  }
+
+  .glass-panel {
+    @apply glass rounded-2xl;
+  }
+
+  /* horizontal carousel with no visible scrollbar, snap-based */
+  .snap-row {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .snap-row::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
