@@ -1,4 +1,4 @@
-# Anti-Gravity Portfolio
+# PHILIP MOSES OMALE PORTFOLIO
 
 A dark, glassmorphic, "anti-gravity" personal portfolio for an AI & Robotics
 engineer, built with Next.js (App Router), Tailwind CSS, Framer Motion, and
